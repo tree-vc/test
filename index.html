@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortcuts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="icon" type="image/png" href="iui/iui-favicon.png">
+    <link rel="apple-touch-icon" href="iui/iui-logo-touch-icon.png"/>
+    <link rel="stylesheet" href="iui/iui.css" type="text/css"/>
+    <link rel="stylesheet" title="Default" href="iui/t/default/default-theme.css" type="text/css"/>
+    <link rel="stylesheet" href="css/iui-panel-list.css" type="text/css"/>
+    <style type="text/css">
+        .panel p.normalText {
+            text-align: left;
+            padding: 0 10px 0 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-8634743-10'], ['_trackPageview']);
+    </script>
+    <script type="text/javascript">
+        (function () {
+/*            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);*/
+
+            window.onload = function () {
+                var host = 'm.treevc.net';
+                data = [
+                    {
+                        innerHTML: '上下班',
+                        href: host + '/office/index'
+                    },
+                    {
+                        innerHTML: '高铁快巴',
+                        href: host + '/train/index'
+                    },
+                    {
+                        innerHTML: '主题线路',
+                        href: host + '/theme/index'
+                    },
+                    {
+                        innerHTML: '旧上下班',
+                        href: 'v1.' + host + '/shifts'
+                    },
+                    {
+                        innerHTML: '周边游',
+                        href: host + '/outing/index'
+                    },
+                    {
+                        innerHTML: '包车',
+                        href: 'v1.' + host + '/charters'
+                    }
+                ];
+                for (var item in data) {
+                    if (data.hasOwnProperty(item)) {
+                        var li = document.createElement('li');
+                        var a = document.createElement('a');
+                        a.target = '_blank';
+                        a.href = 'http://' + data[item].href;
+                        a.innerHTML = data[item].innerHTML;
+                        li.appendChild(a);
+                        commonList.appendChild(li);
+
+                        var li2 = document.createElement('li');
+                        var a2 = document.createElement('a');
+                        a2.target = '_blank';
+                        a2.href = 'http://' + data[item].href + '?v-console=true';
+                        a2.innerHTML = data[item].innerHTML;
+                        li2.appendChild(a2);
+                        vConsoleList.appendChild(li2);
+
+                        var li3 = document.createElement('li');
+                        var a3 = document.createElement('a');
+                        a3.target = '_blank';
+                        a3.href = 'https://' + data[item].href + '?v-console=true';
+                        a3.innerHTML = data[item].innerHTML;
+                        li3.appendChild(a3);
+                        vConsoleHttpsList.appendChild(li3);
+                    }
+                }
+            };
+        })();
+    </script>
+</head>
+<body>
+<div class="toolbar">
+    <h1 id="pageTitle">Shortcuts</h1>
+    <a id="backButton" class="button" href="#"></a>
+</div>
+
+<div id="home" class="panel" selected="true">
+    <fieldset>
+        <p class="normalText" style="text-align:center"><b>以下全部都是测试环境链接<br />正式环境请通过公众号访问</b></p>
+    </fieldset>
+    <h2>Common List</h2>
+    <ul id="commonList">
+    </ul>
+    <h2>List with V-Console</h2>
+    <ul id="vConsoleList">
+    </ul>
+    <h2>List with V-Console and Https</h2>
+    <ul id="vConsoleHttpsList">
+    </ul>
+    <h2>老五的需求文档</h2>
+    <ul>
+        <li><a href="http://lxmuqa.axshare.com">主题线路</a></li>
+        <li><a href="http://1grjlq.axshare.com">后台</a></li>
+        <li><a href="http://32qzos.axshare.com">h5</a></li>
+    </ul>
+    <h2>About This Page</h2>
+    <fieldset>
+        <p class="normalText">This page is using iUI in CSS-only mode and supports a wide range of desktop and mobile
+            browsers. The other pages on this site require modern, W3C-compliant mobile browsers.</p>
+
+        <p class="normalText">Current Version: iUI 0.4</p>
+    </fieldset>
+
+</div>
+
+</body>
+</html>
